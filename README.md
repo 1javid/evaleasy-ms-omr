@@ -53,7 +53,3 @@ Evaleasy MS OMR is an Optical Mark Recognition (OMR) system designed to process 
 - `contour_detection.py`: Functions for extracting and sorting contours.
 - `image_processing.py`: Functions for preprocessing images.
 - `section_processing.py`: Functions for processing different sections of the answer sheet.
-
-## License
-
-This project is licensed under the MIT License.
