@@ -65,7 +65,7 @@ def build_result(section_letters, output_dir):
     Construct the final result dictionary from section letters.
     """
     result = {
-        'name': ''.join([letter for _, letter in section_letters.pop(f'section_{SECTION_NAME_INDEX}')]),
+        'firstName': ''.join([letter for _, letter in section_letters.pop(f'section_{SECTION_NAME_INDEX}')]),
         'lastName': ''.join([letter for _, letter in section_letters.pop(f'section_{LAST_NAME_INDEX}')]),
         'assessmentID': ''.join([number for _, number in section_letters.pop(f'section_{ASSESSMENT_ID_INDEX}')]),
         'studentID': ''.join([number for _, number in section_letters.pop(f'section_{STUDENT_ID_INDEX}')]),
