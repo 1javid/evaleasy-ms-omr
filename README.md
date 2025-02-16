@@ -13,7 +13,8 @@ Evaleasy MS OMR is an Optical Mark Recognition (OMR) system designed to process 
 
 ## Requirements
 
-- Python 3.6+
+- Python 3.8+
+- Django 5.1.5
 - Flask
 - OpenCV
 - NumPy
@@ -23,32 +24,39 @@ Evaleasy MS OMR is an Optical Mark Recognition (OMR) system designed to process 
 1. Clone the repository:
     ```bash
     git clone https://github.com/1javid/evaleasy-ms-omr.git
-    cd evaleasy-ms-omr
+    cd evaleasy-ms-omr/ms_omr
     ```
 
-2. Install the required packages:
-    ```bash
+2. Install the dependencies:
+    ```sh
     pip install -r requirements.txt
     ```
 
+3. Apply the migrations:
+    ```sh
+    python manage.py migrate
+    ```
+
+4. Run the development server:
+    ```sh
+    python manage.py runserver 8004
+
 ## Usage
 
-1. Start the Flask application:
-    ```bash
-    python main.py
+1. Start the Django development server:
+    ```sh
+    python manage.py runserver 8004
     ```
 
 2. Use a tool like Postman or cURL to send a POST request to the `/process_image` endpoint with the image file:
     ```bash
-    curl -X POST -F 'file=@path_to_your_image_file' http://127.0.0.1:5000/process_image
+    curl -X POST -F 'file=@path_to_your_image_file' http://127.0.0.1:8004/process_image
     ```
 
 3. The API will return a JSON response containing the extracted information and a Base64-encoded image of the processed answer sheet.
 
 ## Project Structure
 
-- `main.py`: The main Flask application file.
-- `utils/`: Contains helper functions and image processing utilities.
 - `bubble_detection.py`: Functions for detecting and processing bubbles.
 - `contour_detection.py`: Functions for extracting and sorting contours.
 - `image_processing.py`: Functions for preprocessing images.
